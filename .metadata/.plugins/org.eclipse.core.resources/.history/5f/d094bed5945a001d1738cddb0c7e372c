@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 import com.admin.security.jwt.JwtFliter;
 import com.admin.service.AdminImplementation;
 import com.admin.security.jwt.AuthEntryPointJwt;
@@ -24,23 +25,25 @@ public class SecurityConfig  {
 	@Autowired
 	private AdminImplementation userDetailsService;
 
-
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
 	
 	@Autowired
 	private JwtFliter JwtFilter;
 
+	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
+	
 	@Bean
 	public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
 		return authConfig.getAuthenticationManager();
 	}
 
+	
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -55,27 +58,18 @@ public class SecurityConfig  {
 		.csrf()
 		.disable()
 		.authorizeRequests()
-		.antMatchers("/api/admin/registration","/api/admin/login")
+		.antMatchers("/api/**")
 		.permitAll()
 		.anyRequest()
-		.authenticated()
+		.permitAll()
 		.and()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
 		http.authenticationProvider(authenticationProvider());
-		http.addFilterBefore( JwtFilter, UsernamePasswordAuthenticationFilter.class);
+//		http.addFilterBefore( JwtFilter, UsernamePasswordAuthenticationFilter.class);
 		return http.build();
 	}
 	
-//	@Bean
-//	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-//				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-//				.antMatchers("/api/**").permitAll().anyRequest().authenticated();
-//		http.authenticationProvider(authenticationProvider());
-//		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-//		return http.build();
-//	}
 
 //	@Bean
 //	public JwtFliter authenticationJwtTokenFilter() {
@@ -85,5 +79,6 @@ public class SecurityConfig  {
 	public void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf().disable();
 	}
+
 
 }
