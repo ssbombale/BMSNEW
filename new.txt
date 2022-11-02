@@ -1,0 +1,41 @@
+localhost:9096/api/adminCtrl/registration
+{  "userName":"adminn",
+    "name":"such",
+    "firstName":"as",
+    "lastName":"mane",
+    "password":"abcd@222",
+    "gender":"FEMALE",
+    "contactNumber":"1234567890",
+    "email":"admin@gmail.com"
+}
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+localhost:9096/api/adminCtrl/login
+
+{"username":"adminn",
+   
+    "password":"abcd@222"}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+localhost:9094/User/registration
+{
+    "name": "ShhB",
+    "userName": "Customerrrr",
+    "password":"12345678",
+    "address": "Pune",
+    "state": "Maharashtra",
+    "country": "India",
+    "email":"a78@gmail.com",
+    "pan":"eijp7591f",
+    "contactNumber":"9896543210",
+    "date":"2022-09-02",
+    "accountType":"Saving"
+    }
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+localhost:9094/User/login
+{"username":"Customerrrr",
+   
+    "password":"12345678"}

@@ -1,0 +1,6 @@
+package com.user.entity;
+
+import java.util.List;
+public interface CustomerLoanService {
+public List<CustomeLoanApply> getAllCustomerLoans();
+}

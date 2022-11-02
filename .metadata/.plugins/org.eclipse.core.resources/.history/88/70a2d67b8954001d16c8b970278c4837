@@ -1,0 +1,7 @@
+package com.admin.service;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AdminLoanRepository extends JpaRepository<CustomeLoanApply, Integer> {
+
+}

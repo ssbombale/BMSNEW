@@ -1,0 +1,12 @@
+package com.admin.service;
+
+import java.util.List;
+
+import com.admin.entity.*;
+public class AdminLoanImpl {
+@Override
+public List<CustomeLoanApply> getAllCustomerLoans();
+{
+	return custLoanRepo.findAll();
+}
+}

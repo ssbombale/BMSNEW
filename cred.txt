@@ -1,0 +1,100 @@
+localhost:9000/User/registration
+{
+    "name": "ShhB",
+    "userName": "Suchita",
+    "password":"ab1@49Oy",
+    "address": "Pune",
+    "state": "Maharashtra",
+    "country": "India",
+    "email":"a78@gmail.com",
+    "pan":"eijp7591f",
+    "contactNumber":"9896543210",
+    "date":"2022-09-02",
+    "accountType":"Saving"
+    }
+..............................................................................................
+localhost:9000/login
+
+{"username":"Suchita",
+"password":"ab1@49Oy"}
+
+
+..............................................................................................
+localhost:9000/User/applyLoan			POST
+
+{
+    
+    "loanType":"carloan",
+    "loanAmount":"30000",
+    "applyDate":"2022-10-25",
+    "durationOFLoan":"2",
+    "rateOfInterest":"7",
+    "custId":"18",
+    "activateStatus":"Pending",
+    "status":"true"
+    }
+
+..............................................................................................
+get loan status by c id::::localhost:9000/getAllLoanDetailsById/18
+
+..............................................................................................
+
+
+Update Customer:
+localhost:9000/User/18
+{
+    "id":18,
+    "country":"Australia",
+    "password":"aB1@555y",
+    "address":"Mumbai",
+    "accountType":"Saving", 
+    "contactNumber":"1234500000",
+    "email":"such@gmail.com",
+    "pan":"rijhg8761f",
+    "state":"MH", 
+    "userName":"Akshatarane"
+}
+
+***************************************************************************
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ADMIN::::
+
+get loan details by admin throgh token:
+
+localhost:8000/api/adminCtrl/getAllLoanDetails      GET
+
+
+
+..............................................................................................
+
+Approve REject status by admin
+
+localhost:8000/api/adminCtrl/updateloanDetails/4/Rejected		PUT
+
+
+
+
+..............................................................................................
+localhost:8000/api/adminCtrl/registration
+
+{  "userName":"adminn",
+    "name":"such",
+    "firstName":"as",
+    "lastName":"mane",
+    "password":"abcd@222",
+    "gender":"FEMALE",
+    "contactNumber":"1234567890",
+    "email":"admin@gmail.com"
+}
+..............................................................................................
+
+localhost:8000/api/admin/loginctrl/login
+{
+"username":"adminn",
+"password":"abcd@222"
+}
+
+..............................................................................................
+
