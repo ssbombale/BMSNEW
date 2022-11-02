@@ -99,4 +99,22 @@ public class AdminDetail {
 		this.userName = userName;
 	}
 
+	public AdminDetail(String userName, String name, String firstName, String lastName, String password,
+			String gender, String contactNumber, String email) {
+
+		this.userName = userName;
+		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.gender = gender;
+		this.contactNumber = contactNumber;
+		this.email = email;
+	}
+
+	public AdminDetail() {
+		super();
+		
+	}
+
 }

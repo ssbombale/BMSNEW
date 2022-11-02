@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,16 +39,21 @@ public class AdminController {
 
 	@Autowired
 	private AdminImplementation useraccountServiceImpl;
+	
+	@Autowired
+    private PasswordEncoder encoder;
 
 	@GetMapping(value = "/welcome")
 	public String test() {
 		return "Hello !!!!";
 	}
+	
 
 	@PostMapping("/registration")
-	Integer createUser(@Valid @RequestBody AdminDetail user) {
-		Integer id = customerService.saveUser(user);
-		return id;
+	public AdminDetail createUser(@Valid @RequestBody AdminDetail admin) {
+		AdminDetail admin1 = new AdminDetail(admin.getUserName(), encoder.encode(admin.getPassword()), admin.getName(), admin.getFirstName(), admin.getLastName(),admin.getGender(), admin.getContactNumber(),admin.getEmail());
+		customerService.saveUser(admin1);
+		 return admin1;
 	}
 
 	@PostMapping(value = "/login")

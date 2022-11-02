@@ -21,9 +21,9 @@ public class AdminServiceImpl  implements AdminService{
 	CustomerLoanRepo customeRepo;
 	
 	@Override
-	public Integer saveUser(AdminDetail user) {
+	public AdminDetail saveUser(AdminDetail user) {
 		AdminDetail savedUser = customerRepo.save(user);
-		return  savedUser.getUserId();
+		return  savedUser;
 	}
 	
 //	@Override

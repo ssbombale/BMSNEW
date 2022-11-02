@@ -12,7 +12,7 @@ public interface AdminService {
 	
 	
 	
-	Integer saveUser (AdminDetail user);
+	public AdminDetail saveUser (AdminDetail user);
 
 	AdminDetail loadUserByUsername(String userName);
 

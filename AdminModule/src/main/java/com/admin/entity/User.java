@@ -30,8 +30,7 @@ public class User {
 
 	private String userName;
 
-	@Size(max = 20, min = 8)
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$", message = "password minimum length 8 chars , atleast  have one capital letter , one small letter, one special char,one number")
+	@Size(min = 8)
 
 	private String password;
 
@@ -155,6 +154,27 @@ public class User {
 
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
+	}
+
+	public User(Integer id, String name, String userName, String password, String address, String state, String country,
+			String email, String pan, String contactNumber, Date date, String accountType) {
+
+		this.id = id;
+		this.name = name;
+		this.userName = userName;
+		this.password = password;
+		this.address = address;
+		this.state = state;
+		this.country = country;
+		this.email = email;
+		this.pan = pan;
+		this.contactNumber = contactNumber;
+		this.date = date;
+		this.accountType = accountType;
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 }

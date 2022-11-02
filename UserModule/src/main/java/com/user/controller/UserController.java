@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,7 +25,7 @@ import com.user.service.UserImplementation;
 import com.user.service.UserService;
 
 @RestController
-@RequestMapping(value = "/api/User")
+@RequestMapping(value = "/api/user")
 
 public class UserController {
 	
@@ -53,7 +52,7 @@ public class UserController {
 	
 	@PostMapping("/registration")
 	public User createUser(@Valid @RequestBody User user) {
-		User user1 = new User(user.getName(), user.getUserName(),encoder.encode(user.getPassword()),user.getAddress(),user.getState(), user.getCountry(), user.getEmail(), user.getPan(), user.getContactNumber(),user.getDate(), user.getAccountType());
+		User user1 = new User(user.getName(), user.getUserName(), encoder.encode(user.getPassword()),user.getAddress(),user.getState(), user.getCountry(), user.getEmail(), user.getPan(), user.getContactNumber(),user.getDate(), user.getAccountType());
 		 customerService.saveUser(user1);
 		 return user1;
 	}
