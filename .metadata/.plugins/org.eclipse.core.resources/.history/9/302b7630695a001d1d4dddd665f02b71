@@ -1,12 +1,27 @@
 package com.admin.entity;
+import java.sql.Date;
+
+import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Entity
+//@Table(name = "AdminReg")
 public class AdminDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +34,7 @@ public class AdminDetail {
 	private String gender;
 	private String contactNumber;
 	private String email;
-
+	
 	public String getEmail() {
 		return email;
 	}
@@ -36,6 +51,7 @@ public class AdminDetail {
 		this.name = name;
 	}
 
+
 	@Column(name = "UserId")
 	public Integer getUserId() {
 		return userId;
@@ -44,6 +60,7 @@ public class AdminDetail {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
+
 
 	@Column(name = "FirstName")
 	public String getFirstName() {
@@ -98,5 +115,10 @@ public class AdminDetail {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+		
+		
+		
+
+	
 
 }

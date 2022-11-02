@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class AdminDetail {
 	@Id
@@ -19,7 +20,7 @@ public class AdminDetail {
 	private String gender;
 	private String contactNumber;
 	private String email;
-
+	
 	public String getEmail() {
 		return email;
 	}
@@ -36,6 +37,7 @@ public class AdminDetail {
 		this.name = name;
 	}
 
+
 	@Column(name = "UserId")
 	public Integer getUserId() {
 		return userId;
@@ -44,6 +46,7 @@ public class AdminDetail {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
+
 
 	@Column(name = "FirstName")
 	public String getFirstName() {
@@ -98,5 +101,10 @@ public class AdminDetail {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+		
+		
+		
+
+	
 
 }
