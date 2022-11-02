@@ -51,7 +51,7 @@ public class AdminController {
 
 	@PostMapping("/registration")
 	public AdminDetail createUser(@Valid @RequestBody AdminDetail admin) {
-		AdminDetail admin1 = new AdminDetail(admin.getUserName(), admin.getName(), admin.getFirstName(), admin.getLastName(), encoder.encode(admin.getPassword()),admin.getGender(), admin.getContactNumber(),admin.getEmail());
+		AdminDetail admin1 = new AdminDetail(admin.getUserName(), encoder.encode(admin.getPassword()), admin.getName(), admin.getFirstName(), admin.getLastName(),admin.getGender(), admin.getContactNumber(),admin.getEmail());
 		customerService.saveUser(admin1);
 		 return admin1;
 	}

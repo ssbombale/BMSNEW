@@ -31,5 +31,11 @@ public class UserImplementation implements UserDetailsService {
 		return null;
 	}
 
+//	@Override
+//	public Integer saveUser(User user) {
+//		User savedUser = customerRepo.save(user);
+//		return  savedUser.getId();
+//	}
+//	
 
 }

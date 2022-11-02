@@ -11470,3 +11470,114 @@ java.lang.InterruptedException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 12:10:51.803
 !MESSAGE executing callback sts4.classpath.BAHBDzCY SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:22:57.662
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.BAHBDzCY
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:22:57.662
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.BAHBDzCY
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:22:57.662
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:22:57.662
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.BAHBDzCY => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:01.740
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:01.740
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5e18a6a7[org.springframework.tooling.boot.ls:1.13.0.201911200938(id=632)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:01.740
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.834
+!MESSAGE Boot LS startup time from start to initialized: 2094ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.943
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.BcGMcfjBisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE subscribing to classpath changes: sts4.classpath.BcGMcfjB isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE subsribers = {sts4.classpath.BcGMcfjB=Send Classpath Notifications(3813)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE project UserModule ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE project AdminModule ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE project EurekaServer ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE project GatewayService ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.BcGMcfjB => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE Preparing classpath changed notification UserModule
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE classpath=147 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE buffering callback sts4.classpath.BcGMcfjB UserModule false 147
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE Preparing classpath changed notification AdminModule
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.959
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE classpath=147 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE buffering callback sts4.classpath.BcGMcfjB AdminModule false 147
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE Preparing classpath changed notification EurekaServer
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE classpath=130 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE buffering callback sts4.classpath.BcGMcfjB EurekaServer false 130
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.975
+!MESSAGE Preparing classpath changed notification GatewayService
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.990
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.990
+!MESSAGE classpath=136 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.990
+!MESSAGE buffering callback sts4.classpath.BcGMcfjB GatewayService false 136
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:03.990
+!MESSAGE executing callback sts4.classpath.BcGMcfjB 4 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-11-02 13:23:04.084
+!MESSAGE executing callback sts4.classpath.BcGMcfjB SUCCESS [done]

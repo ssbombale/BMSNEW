@@ -27,6 +27,9 @@ public class SecurityConfig  {
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
+	
+	@Autowired
+	private JwtFliter JwtFilter;
 
 	
 	@Bean

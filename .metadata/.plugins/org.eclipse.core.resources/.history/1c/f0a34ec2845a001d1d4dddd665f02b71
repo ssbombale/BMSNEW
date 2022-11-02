@@ -60,10 +60,10 @@ public class SecurityConfig {
 		.anyRequest()
 		.permitAll()
 		.and()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//		.exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
 		http.authenticationProvider(authenticationProvider());
-		http.addFilterBefore( JwtFilter, UsernamePasswordAuthenticationFilter.class);
+//		http.addFilterBefore( JwtFilter, UsernamePasswordAuthenticationFilter.class);
 		return http.build();
 	}
 	
