@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,6 +33,19 @@ public class UserController {
 	@Autowired
 	private UserService customerService;
 	
+	@Autowired
+	private JwtUtils jwtUtil;
+
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
+	@Autowired
+	private UserImplementation useraccountServiceImpl;
+	
+	@Autowired
+    private PasswordEncoder encoder;
+	
+	
 	@GetMapping(value = "/welcome")
 	public String test() {
 		return "Hello !!!!";
@@ -44,50 +58,6 @@ public class UserController {
 		 return user1;
 	}
 	
-	@GetMapping(value = "/getAllLoanDetailsById/{custId}")
-	public List<CustomeLoanApply> getAllLoanDetailsById(@PathVariable Integer custId) {
-		List<CustomeLoanApply> list = customerService.getLoanByCustId(custId);
-		return list;
-	} 
-	
-	@GetMapping(value = "/getAllLoanDetails/{custId}")
-	public List<CustomeLoanApply> getAllLoanDetails() {
-		List<CustomeLoanApply> list = customerService.getAllLoanDetails();
-		return list;
-	} 
-	@PostMapping("/applyLoan")
-	public Integer applyloan( @RequestBody CustomeLoanApply user) {
-		Integer id = customerService.saveLoanApply(user);
-		return id;
-	}
-	
-	@PutMapping("/{id}")
-	public ResponseEntity<User> updateCustomer(@PathVariable Integer id, @RequestBody User user){
-		ResponseEntity<User> responseEntity = new ResponseEntity<>(HttpStatus.OK);
-		try {
-			
-			customerService.updateCustomer(user, id);
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			responseEntity = new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-				}
-		return responseEntity;
-	}
-	
-	
-	@Autowired
-	private JwtUtils jwtUtil;
-
-	@Autowired
-	private AuthenticationManager authenticationManager;
-
-	@Autowired
-	private UserImplementation useraccountServiceImpl;
-	
-	@Autowired
-    private PasswordEncoder encoder;
-
 	@PostMapping(value = "/login")
 	public ResponseEntity<?> login(@RequestBody Login login) throws Exception {
 
@@ -115,6 +85,45 @@ public class UserController {
 			
 		}
 	}
+	
+	@PostMapping("/applyLoan")
+	public Integer applyloan( @RequestBody CustomeLoanApply user) {
+		Integer id = customerService.saveLoanApply(user);
+		return id;
+	}
+	
+	
+	@GetMapping(value = "/getAllLoanDetailsById/{custId}")
+	public List<CustomeLoanApply> getAllLoanDetailsById(@PathVariable Integer custId) {
+		List<CustomeLoanApply> list = customerService.getLoanByCustId(custId);
+		return list;
+	} 
+	
+	
+	@GetMapping(value = "/getAllLoanDetails/{custId}")
+	public List<CustomeLoanApply> getAllLoanDetails() {
+		List<CustomeLoanApply> list = customerService.getAllLoanDetails();
+		return list;
+	} 
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<User> updateCustomer(@PathVariable Integer id, @RequestBody User user){
+		ResponseEntity<User> responseEntity = new ResponseEntity<>(HttpStatus.OK);
+		try {
+			
+			customerService.updateCustomer(user, id);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			responseEntity = new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+				}
+		return responseEntity;
+	}
+	
+	
+	
+
+
 	
 	
 	

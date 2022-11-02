@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.filter.OncePerRequestFilter;
 import com.user.service.UserImplementation;
 
-@CrossOrigin(origins = "*")
 public class JwtFliter extends OncePerRequestFilter {
 	@Autowired
 	private JwtUtils jwtUtils;
